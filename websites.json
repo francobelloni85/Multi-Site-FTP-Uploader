@@ -1,0 +1,21 @@
+{
+  "directoryPath": "E:\\source\\ProgettoSpartaco\\EmptyTemplate",
+  "filesToTake": 30,
+  "PathWinSCP": "D:\\Programs\\WinSCP\\WinSCP.com",
+  "filesToExclude": [ "Web.config", "package.json", "fileC.txt" ],
+  "foldersToExclude": [ "node_modules", "App_Code\\CustomData", "App_Code\\WebsiteModels" ],
+  "sites": [
+    {
+      "ftp_url": "ftp://MyUserName@MyDomain.com:MyPassword@ftp.MyDomain.com:21/",
+      "root_folder": "/MyDomain.com/"
+    },
+    {
+      "ftp_url": "ftp://MyUserName@MyDomain2.com:MyPassword@ftp.MyDomain2.com:21/",
+      "root_folder": "/MyDomain2.com/"
+    },
+    {
+      "ftp_url": "ftp://MyUserName@MyDomain3.com:MyPassword@ftp.MyDomain3.com:21/",
+      "root_folder": "/MyDomain3.com/"
+    }
+  ]
+}
