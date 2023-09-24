@@ -32,8 +32,8 @@ namespace MultiFTPUploader
                 }
                 Console.WriteLine("+-----+------------------------------------------------------------------------------------------------------+---------------------+");
 
-                int countFilesToTake = GetFilesToTake("How many files do you want to transfer? ", files.Count);
-                int countFilesSkip = GetFilesToTake("File to skip? ", files.Count);
+                int countFilesToTake = GetFilesToTake("How many files do you want to transfer? ",1, files.Count);
+                int countFilesSkip = GetFilesToTake("File to skip? ", 0, files.Count);
 
                 var filesToUpdate = files.Skip(countFilesSkip).Take(countFilesToTake);
 
@@ -166,14 +166,14 @@ namespace MultiFTPUploader
 
         }
 
-        private static int GetFilesToTake(string message, int maxFileToTake)
+        private static int GetFilesToTake(string message, int minFileToTake, int maxFileToTake)
         {
             Console.Write(message);
             int numberOfFiles;
             while (true)
             {
                 string? input = Console.ReadLine();
-                if (int.TryParse(input, out numberOfFiles) && numberOfFiles > 0 && numberOfFiles < maxFileToTake)
+                if (int.TryParse(input, out numberOfFiles) && numberOfFiles >= minFileToTake && numberOfFiles < maxFileToTake)
                 {
                     break;
                 }
